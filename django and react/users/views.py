@@ -13,6 +13,5 @@ class GetUserProfileView(APIView):
             user_profile = UserProfileSerializer(user_profile)
             
             return Response({ 'profile': user_profile.data, 'username': str(username) })
-        except NameError as err:
-            return Response({ 'error': err})
-            # return Response({ 'error': 'Something went wrong when retrieving profile' })
+        except:
+            return Response({ 'error': 'Something went wrong when retrieving profile' })

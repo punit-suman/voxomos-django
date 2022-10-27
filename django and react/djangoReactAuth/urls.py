@@ -20,8 +20,13 @@ from django.views.generic import TemplateView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('rest_framework.urls')),
+    # api routes
     path('accounts/', include('accounts.urls')),
-    path('users/', include('users.urls'))
+    path('users/', include('users.urls')),
+    # react routes
+    path('', TemplateView.as_view(template_name='index.html')),
+    path('profile', TemplateView.as_view(template_name='index.html')),
+    path('authenticate', TemplateView.as_view(template_name='index.html')),
 ]
 
 # urlpatterns += [

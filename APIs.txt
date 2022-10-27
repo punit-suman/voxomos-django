@@ -1,0 +1,25 @@
+API endpoints -
+
+1. GET /accounts/csrf_cookie
+	- sets csrf token in cookie for further requests (no api call can be made without csrf token in cookie)
+
+2. POST /accounts/register
+	- creates user, session not created
+	Headers - X-CSRFToken
+	Body - username, password, re_password
+
+3. POST /accounts/login
+	- authenticates and creates session; new csrf token generated
+	Headers - X-CSRFToken
+	Body - username, password
+
+4. POST /accounts/logout
+	- destroy session; authentication required
+	Headers - X-CSRFToken
+
+5. GET /accounts/isAuth
+	- to check if user if authenticated or not
+	Headers - X-CSRFToken
+
+5. GET /users/user
+	- get user details; authentication required
